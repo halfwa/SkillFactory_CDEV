@@ -8,31 +8,36 @@ namespace Task_10_5_1
 {
     internal class Calculator : ICalculator
     {
-        ICalculatorManager CalculatorManager { get; }
-        public Calculator(ICalculatorManager calculatorManager)
+        ILogger Logger { get; }
+        public Calculator(ILogger logger)
         {
-            CalculatorManager = calculatorManager;
+            Logger = logger;
         }
         public void Start()
         {
             Console.WriteLine("Калькулятор работает!");
-            try
+            bool isActive = true;
+            while (isActive)
             {
-                double num1, num2, result = 0;
+                try
+                {
+                    double num1, num2, result = 0;
 
-                Console.WriteLine("Введите два числа для получения их суммы...");
-                Console.WriteLine("Первое число :");
-                num1 = double.Parse(Console.ReadLine());
-                Console.WriteLine("Второе число :");
-                num2 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите два числа для получения их суммы...");
+                    Console.WriteLine("Первое число :");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Второе число :");
+                    num2 = double.Parse(Console.ReadLine());
 
-                result = CalculatorManager.Sum(num1, num2);
-
-                Console.WriteLine($"{num1} + {num2} = {result}");
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
+                    result = Logger.Sum(num1, num2);
+                    Console.WriteLine($"{num1} + {num2} = {result}");
+                    isActive = false;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex.Message);
+                }
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
     

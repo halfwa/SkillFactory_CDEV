@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task_10_5_1
 {
-    internal interface ICalculatorManager
+    internal interface ILogger
     {
         public double Sum(double x, double y);
+        void Error(string message);
     }
 }
