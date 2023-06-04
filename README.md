@@ -1,2 +1,2 @@
-# halfwa-SkillFactory_CDEV
+# SkillFactory_CDEV
 Курс Разработчика C# от SkillFactory
