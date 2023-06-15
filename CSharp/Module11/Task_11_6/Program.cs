@@ -8,7 +8,7 @@ namespace Task_11_6
 {
     internal class Program
     {
-        static async void Main(string[] args)
+        public static async Task Main()
         {
             Console.OutputEncoding = Encoding.Unicode;
 

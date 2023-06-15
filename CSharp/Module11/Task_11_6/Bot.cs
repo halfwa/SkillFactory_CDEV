@@ -22,9 +22,13 @@ namespace Task_11_6
         private TextMessageController _textMessageController;
 
 
-        public Bot(ITelegramBotClient telegramClient)
+        public Bot(ITelegramBotClient telegramClient, DefaultMessageController defaultMessageController, 
+            InlineKeyboardController inlineKeyboardController, TextMessageController textMessageController)
         {
-            _telegramClient = telegramClient;   
+            _telegramClient = telegramClient;
+            _defaultMessageController = defaultMessageController;
+            _inlineKeyboardController = inlineKeyboardController;
+            _textMessageController = textMessageController; 
         }
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
