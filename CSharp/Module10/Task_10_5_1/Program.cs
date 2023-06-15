@@ -1,6 +1,6 @@
 ﻿using System.Security.AccessControl;
 
-namespace Task_10_5_1
+namespace Task_10_5_1 
 {
     internal class Program
     {
