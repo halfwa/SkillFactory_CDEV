@@ -26,7 +26,6 @@ namespace Task_11_6.Controllers
             switch (callbackQuery.Data)
             {
                 case "CalcChars": 
-
                     return;
                 case "Sum":
                     return;
